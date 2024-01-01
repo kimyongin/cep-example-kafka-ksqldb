@@ -1,0 +1,29 @@
+### Info
+GET http://localhost:8088/info
+Content-Type: application/vnd.ksql.v1+json; charset=utf-8
+
+{
+  "ksql": "LIST STREAMS;",
+  "streamsProperties": {}
+}
+
+### Word Count
+POST http://localhost:8088/query
+Content-Type: application/vnd.ksql.v1+json; charset=utf-8
+
+{
+  "ksql": "SELECT * FROM word-counts WHERE word = 'example';",
+  "streamsProperties": {}
+}
+
+
+### Add Message
+POST http://localhost:8090/message
+Content-Type: application/json
+
+{
+  "message": "In the small village, nestled in a peaceful valley surrounded by mountains, there was a small stream that flowed through the village center, where villagers often gathered to enjoy the cool water and the soothing sounds of the flowing stream. The village children loved playing near the stream, watching the fish swim in the clear water, and listening to the birds singing in the trees surrounding the village. The village elders often told stories of the village's history, stories about the founders of the village, tales of the hard times the village had endured, and legends of the mysterious mountains surrounding the village."
+}
+
+
+
